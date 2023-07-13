@@ -1,4 +1,5 @@
 import type { APIGatewayEvent, Context } from 'aws-lambda'
+import { formatISO } from 'date-fns'
 
 import delayedTime from 'src/jobs/defer/delayedTime'
 import { delay } from 'src/lib/defer'
@@ -23,7 +24,7 @@ import { logger } from 'src/lib/logger'
 export const handler = async (event: APIGatewayEvent, _context: Context) => {
   logger.info(`${event.httpMethod} ${event.path}: runDelayedTime function`)
 
-  const sentAt = new Date()
+  const sentAt = formatISO(new Date())
 
   const scheduledDelayedTime = delay(delayedTime, '5m')
   await scheduledDelayedTime(sentAt)

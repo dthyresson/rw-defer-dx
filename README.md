@@ -18,8 +18,22 @@ An example of a [RedwoodJS](https://www.redwoodjs.com) app using [Defer](https:/
 
 6. In defer build settings, in Advanced options add the Pre-build command:
 
+```bash
+yarn rw prisma generate
+```
+
+### Notes
+
+* Prisma client must be generated and
+
 ```
 yarn rw prisma generate
+```
+
+* If you want to use Redwood logger, be sure to set level to info since jobs run as production
+
+```ts
+export const logger = createLogger({ options: { level: 'info' } })
 ```
 
 ## Directory Structure
@@ -28,15 +42,18 @@ yarn rw prisma generate
 - api
  +-- src
   +-- functions
-      +- <>                 // Open api endpoint functions to invoke jobs
+      +- <>                  // Open api endpoint functions to invoke jobs
       +- runHelloWorld
-        +- runHelloWorld.ts
-  +-- jobs                  // Jobs
-    +-- defer               // Directory where Inngest functions are stored
-        +- helloWorld.ts    // Example background function
-        +- time.ts          // Example cron jon function
+        +- runHelloWorld.ts  // Invokes helloWorld job
+      +- runDelayedTime
+        +- runDelayedTime.ts // Invokes delayedTime job
+  +-- jobs                   // Jobs
+    +-- defer                // Directory where Inngest functions are stored
+        +- delayedTime.ts    // Example Delayed function
+        +- helloWorld.ts     // Example background function
+        +- time.ts           // Example cron jon function
   +-- lib
-      +- defer.ts           // Defer client
+      +- defer.ts            // Defer client (exports handy methods)
 ```
 
 ---

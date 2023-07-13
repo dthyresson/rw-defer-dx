@@ -6,7 +6,7 @@ const HomePage = () => {
       <MetaTags title="Home" description="Home page" />
 
       <h1 className="mb-6 text-2xl">Defer + RedwoodJS Example</h1>
-      <div className="flex">
+      <div className="flex space-x-4">
         <div>
           <button
             className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
@@ -19,6 +19,20 @@ const HomePage = () => {
             }}
           >
             Hello!
+          </button>
+        </div>
+        <div>
+          <button
+            className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+            onClick={async () => {
+              const response = await fetch(
+                `${globalThis.RWJS_API_URL}/runDelayedTime`
+              )
+
+              alert((await response.json()).data)
+            }}
+          >
+            Run Delayed Job
           </button>
         </div>
       </div>
