@@ -42,18 +42,21 @@ export const logger = createLogger({ options: { level: 'info' } })
 - api
  +-- src
   +-- functions
-      +- <>                  // Open api endpoint functions to invoke jobs
+      +- <>                    // Open api endpoint functions to invoke jobs
       +- runHelloWorld
-        +- runHelloWorld.ts  // Invokes helloWorld job
+        +- runHelloWorld.ts    // Invokes helloWorld job
       +- runDelayedTime
-        +- runDelayedTime.ts // Invokes delayedTime job
-  +-- jobs                   // Jobs
-    +-- defer                // Directory where Inngest functions are stored
-        +- delayedTime.ts    // Example Delayed function
-        +- helloWorld.ts     // Example background function
-        +- time.ts           // Example cron jon function
+        +- runDelayedTime.ts   // Invokes delayedTime job
+  +-- jobs                     // Jobs
+    +-- defer                  // Directory where Inngest functions are stored
+        +- delayedTime.ts      // Example Delayed function
+        +- helloWorld.ts       // Example background function
+        +- time.ts             // Example cron jon function
+        +- emailMeEveryHour.ts // Sends an email once an hour via Resend
   +-- lib
-      +- defer.ts            // Defer client (exports handy methods)
+      +- defer.ts              // Defer client (exports handy methods)
+      +- resend.ts             // Resend email client
+      +=-logger.ts             // RedwoodJS pino-based logger
 ```
 
 ---

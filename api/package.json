@@ -6,6 +6,7 @@
     "@defer/client": "^1.7.2",
     "@redwoodjs/api": "6.0.0-rc.617",
     "@redwoodjs/graphql-server": "6.0.0-rc.617",
-    "date-fns": "^2.30.0"
+    "date-fns": "^2.30.0",
+    "resend": "^0.17.1"
   }
 }
