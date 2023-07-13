@@ -1,3 +1,46 @@
+# Defer.run and RedwoodJS Example
+
+An example of a [RedwoodJS](https://www.redwoodjs.com) app using [Defer](https://www.defer.run) to run background jobs.
+
+## Setup
+
+1. Clone this repo
+
+2. See directory structure
+
+3. Be sure to generate your Prisma client
+
+4. Sign up for Defer
+
+5. Create an app and link to your repo
+
+7. Set your `DEFER_TOKEN` if running locally and want to run hosted jobs
+
+6. In defer build settings, in Advanced options add the Pre-build command:
+
+```
+yarn rw prisma generate
+```
+
+## Directory Structure
+
+```
+- api
+ +-- src
+  +-- functions
+      +- <>                 // Open api endpoint functions to invoke jobs
+      +- runHelloWorld
+        +- runHelloWorld.ts
+  +-- jobs                  // Jobs
+    +-- defer               // Directory where Inngest functions are stored
+        +- helloWorld.ts    // Example background function
+        +- time.ts          // Example cron jon function
+  +-- lib
+      +- defer.ts           // Defer client
+```
+
+---
+
 # README
 
 Welcome to [RedwoodJS](https://redwoodjs.com)!

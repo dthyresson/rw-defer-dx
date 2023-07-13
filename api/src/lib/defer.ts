@@ -1,1 +1,1 @@
-export { defer } from '@defer/client'
+export { defer, addMetadata, delay, getExecution } from '@defer/client'

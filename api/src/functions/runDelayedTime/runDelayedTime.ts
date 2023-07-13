@@ -1,6 +1,7 @@
 import type { APIGatewayEvent, Context } from 'aws-lambda'
 
-import helloWorld from 'src/jobs/defer/helloWorld'
+import delayedTime from 'src/jobs/defer/delayedTime'
+import { delay } from 'src/lib/defer'
 import { logger } from 'src/lib/logger'
 
 /**
@@ -20,9 +21,12 @@ import { logger } from 'src/lib/logger'
  * function, and execution environment.
  */
 export const handler = async (event: APIGatewayEvent, _context: Context) => {
-  logger.info(`${event.httpMethod} ${event.path}: runHelloWorld function`)
+  logger.info(`${event.httpMethod} ${event.path}: runDelayedTime function`)
 
-  await helloWorld(event.queryStringParameters['name'] || 'World')
+  const sentAt = new Date()
+
+  const scheduledDelayedTime = delay(delayedTime, '5m')
+  await scheduledDelayedTime(sentAt)
 
   return {
     statusCode: 200,
@@ -30,7 +34,7 @@ export const handler = async (event: APIGatewayEvent, _context: Context) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      data: 'runHelloWorld function',
+      data: 'runDelayedTime function',
     }),
   }
 }
