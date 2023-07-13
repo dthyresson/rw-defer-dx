@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "@defer/client": "^1.7.2",
     "@redwoodjs/api": "6.0.0-rc.617",
     "@redwoodjs/graphql-server": "6.0.0-rc.617"
   }
