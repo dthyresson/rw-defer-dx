@@ -7,7 +7,7 @@
 
 [web]
   bundler = "vite"
-  title = "Redwood App"
+  title = "Defer and RedwoodJS Example App"
   port = 8910
   apiUrl = "/.redwood/functions" # You can customize graphql and dbauth urls individually too: see https://redwoodjs.com/docs/app-configuration-redwood-toml#api-paths
   includeEnvironmentVariables = ['RWJS_API_URL']
