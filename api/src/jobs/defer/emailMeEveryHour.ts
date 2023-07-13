@@ -25,6 +25,6 @@ const emailMeEveryHour = async () => {
   }
 }
 
-// “At minute 0 past every hour from 10 through 23 on every day-of-week from Monday through Friday.”
-// UTC: 0 10-23 * * 1-5
-export default defer.cron(emailMeEveryHour, '0 10-23 * * 1-5')
+// “At minute 15 past every hour from 10 through 23 on every day-of-week from Monday through Friday.”
+// UTC: 0/15 10-23 * * 1-5
+export default defer.cron(emailMeEveryHour, '0/15 10-23 * * 1-5')
