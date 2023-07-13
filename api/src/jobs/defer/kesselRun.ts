@@ -5,7 +5,7 @@ import { defer } from 'src/lib/defer'
 import { logger } from 'src/lib/logger'
 import { spaceships } from 'src/services/spaceships/spaceships'
 
-const time = async () => {
+const kesselRun = async () => {
   const now = formatRFC7231(new Date())
   logger.info(`It's now ${now}!`)
 
@@ -20,6 +20,6 @@ const time = async () => {
   })
 }
 
-// At every 10th minute past every hour from 10 through 23 on every day-of-week from Monday through Friday.
-// UTC: 0 */10 10-23 * * 1-5
-export default defer.cron(time, '*/15 10-23 * * 1-5')
+// At every 15th minute past every hour from 10 through 23 on every day-of-week from Monday through Friday.
+// UTC: 0 */15 10-23 * * 1-5
+export default defer.cron(kesselRun, '*/15 10-23 * * 1-5')
