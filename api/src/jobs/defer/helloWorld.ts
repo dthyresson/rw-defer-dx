@@ -1,6 +1,5 @@
 // the `defer()` helper will be used to define a background function
-import { defer } from '@defer/client'
-
+import { defer } from 'src/lib/defer'
 import { logger } from 'src/lib/logger'
 
 // a background function must be `async`
