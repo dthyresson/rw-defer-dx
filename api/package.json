@@ -4,9 +4,12 @@
   "private": true,
   "dependencies": {
     "@defer/client": "^1.7.2",
+    "@react-email/button": "0.0.9",
+    "@react-email/html": "0.0.4",
     "@redwoodjs/api": "6.0.0-rc.617",
     "@redwoodjs/graphql-server": "6.0.0-rc.617",
     "date-fns": "^2.30.0",
+    "react-email": "1.9.4",
     "resend": "^0.17.1"
   }
 }

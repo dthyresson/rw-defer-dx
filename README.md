@@ -47,8 +47,8 @@ export const logger = createLogger({ options: { level: 'info' } })
         +- runHelloWorld.ts    // Invokes helloWorld job
       +- runDelayedTime
         +- runDelayedTime.ts   // Invokes delayedTime job
-  +-- jobs                     // Jobs
-    +-- defer                  // Directory where Inngest functions are stored
+  +-- jobs                     // Jobs can be Defer or Inngest
+    +-- defer                  // Directory where Defer functions are stored
         +- delayedTime.ts      // Example Delayed function
         +- helloWorld.ts       // Example background function
         +- time.ts             // Example cron jon function
