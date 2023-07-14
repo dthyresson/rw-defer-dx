@@ -12,7 +12,7 @@ const sendEmail = async () => {
   logger.info(message)
 
   try {
-    const data = await resend.emails.send({
+    const data = await resend.sendEmail({
       from: 'Acme <onboarding@resend.dev>',
       to: [process.env.SEND_TO_EMAIL],
       subject: 'Hello World',
