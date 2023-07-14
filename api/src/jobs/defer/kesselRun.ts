@@ -1,7 +1,7 @@
 import { formatRFC7231 } from 'date-fns'
 import { Spaceship } from 'types/graphql'
 
-import { defer } from 'src/lib/defer'
+import { defer } from 'src/jobs'
 import { logger } from 'src/lib/logger'
 import { spaceships } from 'src/services/spaceships/spaceships'
 

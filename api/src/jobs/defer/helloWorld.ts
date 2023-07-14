@@ -1,4 +1,4 @@
-import { defer } from 'src/lib/defer'
+import { defer } from 'src/jobs'
 import { logger } from 'src/lib/logger'
 
 // a background function must be `async`

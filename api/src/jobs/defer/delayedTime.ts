@@ -1,6 +1,6 @@
 import { formatRFC7231, parseISO } from 'date-fns'
 
-import { defer } from 'src/lib/defer'
+import { defer } from 'src/jobs'
 import { logger } from 'src/lib/logger'
 
 async function delayedTime(sentAt: string) {

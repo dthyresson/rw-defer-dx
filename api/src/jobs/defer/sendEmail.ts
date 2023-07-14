@@ -1,10 +1,10 @@
 import { formatRFC7231 } from 'date-fns'
 
-import { defer } from 'src/lib/defer'
+import { defer } from 'src/jobs'
 import { logger } from 'src/lib/logger'
-import { resend } from 'src/lib/resend'
+import { resend } from 'src/mailer'
 
-import { Email } from './email/email'
+import { Email } from '../../mailer/templates/react/email'
 
 const sendEmail = async () => {
   const now = formatRFC7231(new Date())

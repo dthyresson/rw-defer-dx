@@ -1,8 +1,8 @@
 import type { APIGatewayEvent, Context } from 'aws-lambda'
 import { formatISO } from 'date-fns'
 
+import { delay } from 'src/jobs/clients/defer'
 import delayedTime from 'src/jobs/defer/delayedTime'
-import { delay } from 'src/lib/defer'
 import { logger } from 'src/lib/logger'
 
 /**
