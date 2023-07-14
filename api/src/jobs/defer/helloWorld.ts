@@ -2,7 +2,7 @@ import { defer } from 'src/jobs'
 import { logger } from 'src/lib/logger'
 
 // a background function must be `async`
-async function helloWorld(name: string) {
+const helloWorld = async (name: string) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       logger.info(`Hello ${name}!`)

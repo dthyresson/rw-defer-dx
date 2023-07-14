@@ -42,32 +42,35 @@ export const logger = createLogger({ options: { level: 'info' } })
 - api
  +-- src
   +-- functions
-      +- <>                    // Open api endpoint functions to invoke jobs
+      +- <>                     // Open api endpoint functions to invoke jobs
+      +- characters
+        +- characters.ts        // Invokes backgroundService job
       +- runHelloWorld
-        +- runHelloWorld.ts    // Invokes helloWorld job
+        +- runHelloWorld.ts     // Invokes helloWorld job
       +- runDelayedTime
-        +- runDelayedTime.ts   // Invokes delayedTime job
+        +- runDelayedTime.ts    // Invokes delayedTime job
       +- sendEmail
-        +- sendEmail.ts        // Invokes sendMail job
+        +- sendEmail.ts         // Invokes sendMail job
   +-- mailer
-    +-- templates              // Email templates
-        +-- react              // React email templates
+    +-- templates               // Email templates
+        +-- react               // React email templates
     +-- clients
-      +- resend.ts             // Resend email client
+      +- resend.ts              // Resend email client
     +- index
-  +-- jobs                     // Jobs can be Defer (or others like Inngest)
+  +-- jobs                      // Jobs can be Defer (or others like Inngest)
     +-- clients
-      +- defer.ts              // Defer client (exports handy methods)
+      +- defer.ts               // Defer client (exports handy methods)
     +- index
-    +-- defer                  // Directory where Defer functions are stored
-        +- delayedTime.ts      // Example Delayed function
-        +- helloWorld.ts       // Example background function
-        +- time.ts             // Example cron jon function
-        +- emailMeEveryHour.ts // Sends an email once an hour via Resend
-        +- kesselRun.ts        // Fetch data via Prisma
-        +- sendMail.ts         // Send and email
+    +-- defer                   // Directory where Defer functions are stored
+        +- backgroundService.ts // Example of of deferring a RedwoodJS api service
+        +- delayedTime.ts       // Example Delayed function
+        +- helloWorld.ts        // Example background function
+        +- time.ts              // Example cron jon function
+        +- emailMeEveryHour.ts  // Sends an email once an hour via Resend
+        +- kesselRun.ts         // Fetch data via Prisma
+        +- sendMail.ts          // Send and email
   +-- lib
-      +- logger.ts             // RedwoodJS pino-based logger
+      +- logger.ts              // RedwoodJS pino-based logger
 ```
 
 ---

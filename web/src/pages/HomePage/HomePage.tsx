@@ -49,6 +49,20 @@ const HomePage = () => {
             Send email
           </button>
         </div>
+        <div>
+          <button
+            className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+            onClick={async () => {
+              const response = await fetch(
+                `${globalThis.RWJS_API_URL}/characters`
+              )
+
+              alert((await response.json()).data)
+            }}
+          >
+            Defer the Characters Service
+          </button>
+        </div>
       </div>
     </div>
   )
