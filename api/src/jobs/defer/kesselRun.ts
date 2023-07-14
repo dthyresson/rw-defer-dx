@@ -1,5 +1,5 @@
+import { Spaceship } from '@prisma/client'
 import { formatRFC7231 } from 'date-fns'
-import { Spaceship } from 'types/graphql'
 
 import { defer } from 'src/jobs'
 import { logger } from 'src/lib/logger'
@@ -18,6 +18,8 @@ const kesselRun = async () => {
       `The ${ship.name} will do the Kessel Run in ${ship.appearsIn.join(', ')}'`
     )
   })
+
+  return ships
 }
 
 // At every 15th minute past every hour from 10 through 23 on every day-of-week from Monday through Friday.

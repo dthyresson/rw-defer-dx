@@ -47,16 +47,27 @@ export const logger = createLogger({ options: { level: 'info' } })
         +- runHelloWorld.ts    // Invokes helloWorld job
       +- runDelayedTime
         +- runDelayedTime.ts   // Invokes delayedTime job
-  +-- jobs                     // Jobs can be Defer or Inngest
+      +- sendEmail
+        +- sendEmail.ts        // Invokes sendMail job
+  +-- mailer
+    +-- templates              // Email templates
+        +-- react              // React email templates
+    +-- clients
+      +- resend.ts             // Resend email client
+    +- index
+  +-- jobs                     // Jobs can be Defer (or others like Inngest)
+    +-- clients
+      +- defer.ts              // Defer client (exports handy methods)
+    +- index
     +-- defer                  // Directory where Defer functions are stored
         +- delayedTime.ts      // Example Delayed function
         +- helloWorld.ts       // Example background function
         +- time.ts             // Example cron jon function
         +- emailMeEveryHour.ts // Sends an email once an hour via Resend
+        +- kesselRun.ts        // Fetch data via Prisma
+        +- sendMail.ts         // Send and email
   +-- lib
-      +- defer.ts              // Defer client (exports handy methods)
-      +- resend.ts             // Resend email client
-      +=-logger.ts             // RedwoodJS pino-based logger
+      +- logger.ts             // RedwoodJS pino-based logger
 ```
 
 ---

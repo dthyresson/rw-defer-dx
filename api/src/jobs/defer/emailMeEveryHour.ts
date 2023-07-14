@@ -20,6 +20,8 @@ const emailMeEveryHour = async () => {
     })
 
     logger.debug(data, 'Sent email')
+
+    return { message, data }
   } catch (error) {
     logger.error(error, 'Failed to send email')
   }
