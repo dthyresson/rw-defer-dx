@@ -8,7 +8,11 @@ An example of a [RedwoodJS](https://www.redwoodjs.com) app using [Defer](https:/
 
 2. See directory structure
 
-3. Be sure to generate your Prisma client
+3. Be sure to setup a DATABASE_URL and generate your Prisma client
+
+```bash
+yarn rw prisma generate
+```
 
 4. Sign up for Defer
 
@@ -21,6 +25,12 @@ An example of a [RedwoodJS](https://www.redwoodjs.com) app using [Defer](https:/
 ```bash
 yarn rw prisma generate
 ```
+
+7. In defer build settings, in Environment variables set:
+
+* `DATABASE_URL` to a connection string available in the cloud (ie, not local SQLite)
+* `RESEND_API_KEY` to your [Resend](https://resend.com) api key in order to send emails
+* `SEND_TO_EMAIL` to the email address you want mails sent
 
 ### Notes
 
