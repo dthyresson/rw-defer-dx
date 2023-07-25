@@ -4,7 +4,7 @@ import { defer } from 'src/jobs'
 import { logger } from 'src/lib/logger'
 import { resend } from 'src/mailer'
 
-import { Email } from '../../mailer/templates/react/email'
+import { Email } from '../../mailer/templates/react/emails/email'
 
 const sendEmail = async () => {
   const now = formatRFC7231(new Date())
